@@ -38,7 +38,7 @@ class NotesCreateView(CreateView):
     form_class = NotesForm
 
     def form_valid(self, form):
-        self.object = form.save(commit=false)
+        self.object = form.save(commit=False)
         self.object.user = self.request.user
         self.object.save()
         return HttpResponseRedirect(self.get_success_url())
